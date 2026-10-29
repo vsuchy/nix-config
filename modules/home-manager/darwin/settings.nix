@@ -160,7 +160,7 @@
       keyboard.keyRepeatRate = 1;
 
       # System Settings › Keyboard › Delay until repeat
-      keyboard.delayUntilRepeat = 10;
+      keyboard.delayUntilRepeat = 25;
 
       # System Settings › Keyboard › Press 🌐︎ key to
       keyboard.pressGlobeKeyTo = "Do Nothing";
@@ -177,7 +177,7 @@
       # --- Trackpad ---
 
       # System Settings › Trackpad › Point & Click › Tracking speed
-      trackpad.pointAndClick.trackingSpeed = 0.0;
+      trackpad.pointAndClick.trackingSpeed = 1.5;
 
       # System Settings › Trackpad › Point & Click › Force Click and haptic feedback
       trackpad.pointAndClick.forceClickAndHapticFeedback = false;
