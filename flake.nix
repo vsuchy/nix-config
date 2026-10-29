@@ -23,6 +23,7 @@
       home-manager,
       nix-darwin,
       nix-plist-manager,
+      nixpkgs,
       nixpkgs-unstable,
       self,
       ...
@@ -30,6 +31,7 @@
 
     {
       checks.aarch64-darwin.macbook-pro = self.darwinConfigurations.macbook-pro.system;
+      checks.aarch64-linux.ubuntu-orb = self.homeConfigurations.ubuntu-orb.activationPackage;
 
       darwinConfigurations.macbook-pro = nix-darwin.lib.darwinSystem {
         modules = [
@@ -47,6 +49,12 @@
 
           ./hosts/macbook-pro/configuration.nix
         ];
+      };
+
+      homeConfigurations.ubuntu-orb = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        extraSpecialArgs = { inherit nixpkgs-unstable; };
+        modules = [ ./hosts/ubuntu-orb/configuration.nix ];
       };
     };
 }

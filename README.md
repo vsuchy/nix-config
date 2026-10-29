@@ -20,6 +20,35 @@ Apply later changes with:
 sudo darwin-rebuild switch --flake .#macbook-pro
 ```
 
+## Ubuntu setup (OrbStack)
+
+Create and enter the Ubuntu machine from macOS:
+
+```sh
+orb create ubuntu ubuntu-orb
+orb -m ubuntu-orb
+```
+
+Inside Ubuntu, use the `vs` account with home directory `/home/vs`. Install Nix:
+
+```sh
+curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes
+```
+
+Start a new shell, then run from the repository root inside Ubuntu. This host uses standalone Home Manager:
+
+```sh
+nix run --inputs-from . home-manager#home-manager -- switch --flake .#ubuntu-orb
+```
+
+Apply later changes with:
+
+```sh
+home-manager switch --flake .#ubuntu-orb
+```
+
+Run `zsh` to use the shared shell configuration.
+
 ## Manual macOS settings
 
 Set these options manually in System Settings:
@@ -32,6 +61,12 @@ From the repository root, validate changes before switching:
 
 ```sh
 nix flake check --no-update-lock-file
+```
+
+Evaluate both hosts from either platform without building:
+
+```sh
+nix flake check --all-systems --no-build --no-update-lock-file
 ```
 
 Update the pinned Nix dependencies:
