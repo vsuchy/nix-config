@@ -17,8 +17,9 @@ in
       "firefox"
       "ghostty"
       "hammerspoon"
+      "orbstack"
       "tailscale-app"
-      "virtualbuddy@beta"
+      "whichspace"
     ];
 
     onActivation = {
