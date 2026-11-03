@@ -13,5 +13,6 @@
     "fastfetch/config.jsonc".source = ../../dotfiles/.config/fastfetch/config.jsonc;
     "ghostty/config".source = ../../dotfiles/.config/ghostty/config;
     "vifm/vifmrc".source = ../../dotfiles/.config/vifm/vifmrc;
+    "zed/settings.json".source = ../../dotfiles/.config/zed/settings.json;
   };
 }
