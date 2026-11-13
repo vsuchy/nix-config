@@ -5,6 +5,9 @@
 -- Bind hotkey for reloading Hammerspoon configuration
 hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "R", hs.reload)
 
+-- PaperWM
+
+hs.window.animationDuration = 0.1
 
 PaperWM = hs.loadSpoon("PaperWM")
 
