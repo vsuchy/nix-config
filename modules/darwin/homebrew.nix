@@ -18,7 +18,9 @@ in
       "ghostty"
       "hammerspoon"
       "orbstack"
+      "stats"
       "tailscale-app"
+      "utm"
       "whichspace"
       "zed"
     ];
