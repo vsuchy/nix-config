@@ -1,6 +1,5 @@
 {
   config,
-  nixpkgs-unstable,
   pkgs,
   ...
 }:
@@ -32,7 +31,5 @@
     git
     vifm
     vim
-
-    # nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.codex
   ];
 }
